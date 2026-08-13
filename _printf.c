@@ -4,6 +4,12 @@ int _printf(const char *format, ...)
 {
  int i;
  va_list args;
+
+ if (!format)
+    return(NULL);
+
+va_start (args, format);
+while ()
 }
 
 void print_all(const char * const format, ...)

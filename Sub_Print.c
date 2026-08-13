@@ -1,6 +1,7 @@
 #include "main.h"
 
-void _write (arg)
+int _write (va_list args, int length)
 {
-    putchar(a)
+    putchar(va_arg(args, int));
+    return (length + 1);
 }
