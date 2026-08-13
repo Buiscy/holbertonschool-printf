@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
     return(NULL);
 
 va_start (args, format);
-while ()
+while (args != Null &&)
 }
 
 void print_all(const char * const format, ...)
