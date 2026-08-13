@@ -1,1 +1,1 @@
-Hello
+This function should print S and C using % as a specifier.
