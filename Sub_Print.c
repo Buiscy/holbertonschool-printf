@@ -1,6 +1,6 @@
 #include "main.h"
 
-void _writegiven (char * )
+void _write (arg)
 {
-
+    putchar(a)
 }
