@@ -1,4 +1,4 @@
-#include "lists.h"
+#include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
 
@@ -34,9 +34,11 @@ int _printf(const char * const format, ...)
 		{
 			case 'c':
                 c = va_arg(args, int);
-                /**"Go to the memory address of c and write 1 byte from there to stdout." */
+                /**"Go to the memory address of c and write 1 byte from there to stdout."
+                /* file_descriptor, address_of_data, number_of_bytes */
                 write(1, &c, 1);
                 length++;
+                p++;
 				break;
 
 			case 'i':
@@ -56,7 +58,6 @@ int _printf(const char * const format, ...)
 				}
 
 				printf("%s%s", separator, s);
-				separator = " ";
 				break;
         }
 		}
