@@ -16,6 +16,7 @@ int _printf(const char * const format, ...)
 	const char *s;
     int length;
     int c;
+	int s;
 
     length = 0;
 	p = format;
@@ -43,6 +44,19 @@ int _printf(const char * const format, ...)
 					break;
 
 				case 's':
+					s = va_arg(args, char *);
+					/** checking NULL before dereferencing */
+					if (s == NULL)
+					{
+						s = "(null)";
+					}
+
+					while (*s != '\0')
+					{
+						write(1, s, 1);
+						length++;
+						s++;
+					}
 					break;
 
 				case '%':
