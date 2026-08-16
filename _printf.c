@@ -30,7 +30,7 @@ int _printf(const char * const format, ...)
 			{
 				case 'c':
 					c = va_arg(args, int);
-					/**"Go to the memory address of c and write 1 byte from there to stdout."
+					/*"Go to the memory address of c and write 1 byte from there to stdout."*/
 					/* file_descriptor, address_of_data, number_of_bytes */
 					write(1, &c, 1);
 					length++;
@@ -63,7 +63,7 @@ int _printf(const char * const format, ...)
 				case 'i':
 				case 'd':
 					i = va_arg(args, int);
-					length += int print_int (i);
+					length += print_int (i);
 					p++;
 					break;
 					
