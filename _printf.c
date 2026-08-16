@@ -68,7 +68,7 @@ int _printf(const char * const format, ...)
 
 				case 'i':
 					i = va_arg(args, int)
-					ifunc()
+					int print_int (int a)
 					
 					break;
 			}

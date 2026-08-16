@@ -17,7 +17,7 @@ int print_int (int a)
 	if (a < 0)
 	{
 		write(1, &minus, 1);
-		tmp = -a;
+		tmp = 0u - (unsigned int) a;
 		length++;
 	}
 	else if (a == 0)
@@ -31,14 +31,14 @@ int print_int (int a)
 
 	index = 0;
 	while (tmp > 0)
-		{
-			i = tmp % 10;
-			digit = i + '0';
-			digits[index] = digit;
-			tmp = tmp / 10;
-			index++;
-			length++;
-		}
+	{
+		i = tmp % 10;
+		digit = i + '0';
+		digits[index] = digit;
+		tmp = tmp / 10;
+		index++;
+		length++;
+	}
 	while(index != 0)
 	{
 		index--;
