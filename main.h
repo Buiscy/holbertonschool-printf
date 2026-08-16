@@ -6,6 +6,6 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
-int _write (va_list args, int length);
+int print_int (int a);
 
 #endif
