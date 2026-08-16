@@ -27,44 +27,37 @@ int _printf(const char * const format, ...)
         if (*p != '%')
         {
             write(1, p, 1);
+			length++;
         }
         else
         {
-		switch (*(p + 1))
-		{
-			case 'c':
-                c = va_arg(args, int);
-                /**"Go to the memory address of c and write 1 byte from there to stdout."
-                /* file_descriptor, address_of_data, number_of_bytes */
-                write(1, &c, 1);
-                length++;
-                p++;
-				break;
+			switch (*(p + 1))
+			{
+				case 'c':
+                	c = va_arg(args, int);
+                	/**"Go to the memory address of c and write 1 byte from there to stdout."
+                	/* file_descriptor, address_of_data, number_of_bytes */
+                	write(1, &c, 1);
+                	length++;
+                	p++;
+					break;
 
-			case 'i':
-				printf("%s%d", separator, va_arg(args, int));
-				break;
+				case 's':
+					break;
 
-			case 'f':
-				printf("%s%f", separator, va_arg(args, double));
-				break;
+				case '%':
+					write(1, "%", 1);
+					length++;
+					p++;
+					break;
 
-			case 's':
-				s = va_arg(args, char *);
-
-				if (s == NULL)
-				{
-					s = "(nil)";
-				}
-
-				printf("%s%s", separator, s);
-				break;
-        }
+				case 'i':
+					break;
+			}
 		}
-
 		p++;
 	}
-
 	va_end(args);
-	printf("\n");
+	
+	return (length);
 }
