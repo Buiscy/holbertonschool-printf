@@ -1,13 +1,7 @@
-#include "lists.h"
+#include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
 
-/**
- * print_all - Prints anything
- * @format: can be c, i, f or s
- *
- * Return: nothing
- */
 int _printf(const char * const format, ...)
 {
 
@@ -67,10 +61,12 @@ int _printf(const char * const format, ...)
 					break;
 
 				case 'i':
-					i = va_arg(args, int)
-					int print_int (int a)
-					
+				case 'd':
+					i = va_arg(args, int);
+					length += int print_int (i);
+					p++;
 					break;
+					
 			}
 		}
 		p++;
@@ -79,22 +75,3 @@ int _printf(const char * const format, ...)
 	
 	return (length);
 }
-
-
-/*
-
-#include "main.h"
-
-int _printf(const char *format, ...)
-{
- int i;
- va_list args;
-
- if (!format)
-	return(NULL);
-
-va_start (args, format);
-while (args != Null &&)
-}
-
-*/
