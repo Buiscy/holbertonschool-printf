@@ -1,7 +1,7 @@
 #ifndef MY_HEADER_H
 #define MY_HEADER_H
 
-#include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
 
